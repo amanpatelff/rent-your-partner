@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENT YOUR PARTNER - Personal Companion in Patna</title>
+    
+    <!-- Google Search Engine Optimization (SEO) Meta Tags -->
+    <meta name="description" content="Rent Your Partner in Patna - Personal companionship, coffee dates, shopping, and social outings in Patna. Book your companion easily online.">
+    <meta name="keywords" content="rent your partner Patna, companion booking Patna, date companion Patna, social companion Patna, Aman companion Patna">
+    <meta name="author" content="Aman">
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg-dark: #0a0512;
+            --card-bg: #150d22;
+            --primary-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            --text-light: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --border-glow: rgba(168, 85, 247, 0.3);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 5, 18, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-glow);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-gradient {
+            background: var(--primary-gradient);
+            color: #fff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 130px 1.5rem 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-container {
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            padding: 0 1.5rem;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 1.8rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-img-box {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid var(--accent-purple);
+            background: #1a102a;
+        }
+
+        .profile-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-thumbs {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+
+        .thumb {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 1px solid var(--accent-purple);
+        }
+
+        .admin-section {
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            padding: 0 1.5rem;
+        }
+
+        .admin-card {
+            background: var(--card-bg);
+            border: 2px dashed var(--accent-pink);
+            border-radius: 20px;
+            padding: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .pricing-section {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 1.5rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-pink);
+            margin: 0.8rem 0;
+        }
+
+        .booking-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 0 1.5rem;
+        }
+
+        .booking-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            padding: 1.8rem;
+            border-radius: 20px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-glow);
+            padding: 1.8rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .profile-card { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Rent Your Partner</div>
+            <ul class="nav-links">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#admin">Admin Panel</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <a href="#booking" class="btn-gradient">Book Now</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Your Time. Your Choice.<br><span>Your Companion in Patna.</span></h1>
+        <p style="color: var(--text-muted);">Personal companionship & custom booking platform in Patna and nearby areas.</p>
+    </section>
+
+    <!-- PROFILE SECTION -->
+    <section id="profile" class="profile-container">
+        <h2 class="section-title">My <span>Profile</span></h2>
+        <div class="profile-card">
+            <div>
+                <div class="profile-img-box">
+                    <img id="mainProfileImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="Aman Companion Patna">
+                </div>
+                <div class="gallery-thumbs" id="thumbnailContainer">
+                    <img class="thumb" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" onclick="changeImage(this.src)">
+                    <img class="thumb" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" onclick="changeImage(this.src)">
+                </div>
+            </div>
+            <div>
+                <h3 id="displayProfileName" style="font-size: 1.6rem; margin-bottom: 0.3rem;">Aman</h3>
+                <p style="color: var(--accent-pink); font-weight: 600; margin-bottom: 1rem;">Professional Companion in Patna</p>
+                <p id="displayBio" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem;">
+                    Hello! Main Patna mein professional aur respectable companionship offer karta hoon. Coffee dates, city outings, shopping aur events ke liye available hoon.
+                </p>
+                <div style="background: rgba(255,255,255,0.03); padding: 0.8rem; border-radius: 8px; font-size: 0.9rem;">
+                    <p><strong>Service Area:</strong> Patna & Nearby Areas</p>
+                    <p><strong>Languages:</strong> Hindi, English</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMIN PANEL SECTION -->
+    <section id="admin" class="admin-section">
+        <h2 class="section-title">Admin <span>Dashboard</span></h2>
+        <div class="admin-card">
+            <p style="color: var(--accent-pink); margin-bottom: 1.2rem; font-weight: 600;"><i class="fa-solid fa-lock"></i> Admin Controls (Aman)</p>
+            
+            <div class="form-group">
+                <label>Update Bio / About Me</label>
+                <textarea id="inputBio" class="form-control" rows="3" oninput="updateBioText()">Hello! Main Patna mein professional aur respectable companionship offer karta hoon. Coffee dates, city outings, shopping aur events ke liye available hoon.</textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Add Image Link (Multiple Photos)</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="imageUrlInput" class="form-control" placeholder="Photo ka link yahan daalein...">
+                    <button class="btn-gradient" onclick="addNewImage()">Add Photo</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Update 1 Hour Price (₹)</label>
+                <input type="number" id="price1h" class="form-control" value="299" oninput="updatePricing()">
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="pricing-section">
+        <h2 class="section-title">Dynamic <span>Pricing</span></h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h4>1 Hour Package</h4>
+                <div class="price" id="priceDisplay1h">₹299</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Standard companionship</p>
+            </div>
+            <div class="pricing-card">
+                <h4>2 Hours Package</h4>
+                <div class="price" id="priceDisplay2h">₹499</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Extended meeting / Outing</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section id="booking" class="booking-section">
+        <h2 class="section-title">Booking <span>Request</span></h2>
+        <div class="booking-form">
+            <form onsubmit="event.preventDefault(); alert('Booking request submitted successfully!');">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" class="form-control" required placeholder="Aapka naam">
+                </div>
+                <div class="form-group">
+                    <label>Select Service Category</label>
+                    <select class="form-control" required>
+                        <option value="Social">Social Companionship (Coffee, Outing, Events)</option>
+                        <option value="Physical">Private / Physical Accompaniment (Custom Charges)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Date & Time</label>
+                    <input type="datetime-local" class="form-control" required>
+                </div>
+                <button type="submit" class="btn-gradient" style="width: 100%; margin-top: 1rem;">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 RENT YOUR PARTNER. All Rights Reserved. | Patna, Bihar</p>
+    </footer>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainProfileImg').src = src;
+        }
+
+        function updateBioText() {
+            const bioText = document.getElementById('inputBio').value;
+            document.getElementById('displayBio').innerText = bioText;
+        }
+
+        function addNewImage() {
+            const url = document.getElementById('imageUrlInput').value;
+            if(url) {
+                const thumbContainer = document.getElementById('thumbnailContainer');
+                const newThumb = document.createElement('img');
+                newThumb.className = 'thumb';
+                newThumb.src = url;
+                newThumb.onclick = function() { changeImage(url); };
+                thumbContainer.appendChild(newThumb);
+                changeImage(url);
+                document.getElementById('imageUrlInput').value = '';
+            }
+        }
+
+        function updatePricing() {
+            const p1 = document.getElementById('price1h').value;
+            document.getElementById('priceDisplay1h').innerText = '₹' + p1;
+            document.getElementById('priceDisplay2h').innerText = '₹' + (p1 * 2 - 99);
+        }
+    </script>
+
+</body>
+</html>
